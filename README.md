@@ -1,5 +1,7 @@
 # LeetCode
 
+https://1kohei1.com/leetcode/
+
 ## 練習方法
 
 - 答えを見ずに考えて、5分考えて分からなかったら答えを見る
