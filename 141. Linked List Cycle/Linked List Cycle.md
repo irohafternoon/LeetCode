@@ -116,4 +116,5 @@ public:
 };
 ```
 
-8分で3回Accept
+8.5分で3回Accept
+
