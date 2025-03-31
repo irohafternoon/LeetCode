@@ -183,7 +183,7 @@ class Solution {
       last_node_before_reverse->next = node_to_push;
       node_to_push->next = push_position;
       push_position = node_to_push; 
-      head_of_reverse->next = node_node_to_push;
+      head_of_reverse->next = next_node_to_push;
     }
     return dummy.next;
   }
