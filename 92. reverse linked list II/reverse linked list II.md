@@ -174,7 +174,6 @@ class Solution {
     }
     // last_node_before_reverse = left-1
     ListNode* head_of_reverse = last_node_before_reverse->next;
-    //last_node_before_reverse->next = nullptr;
     // last_node_before_reverse and head_of_reverse are fixed from now
     ListNode* push_position = head_of_reverse;
     // node_to_push should be set before push_position
