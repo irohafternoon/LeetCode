@@ -127,3 +127,66 @@ class Solution {
   }
 };
 ```
+
+## STEP4
+繋ぎ変えの3種類のうち、残りの2種類を実装
+
+ひっくりかえす前の鎖と後の鎖を用意して、前のやつの先頭を後のやつの先頭につけていく方法
+
+```cpp
+class Solution {
+ public:
+  ListNode* reverseBetween(ListNode* head, int left, int right) {
+    ListNode dummy(0, head);
+    ListNode* last_node_before_reverse = &dummy;
+    for (int i = 0; i < left - 1; i++) {
+      last_node_before_reverse = last_node_before_reverse->next;
+    }
+    // last_node_before_reverse = left-1
+    ListNode* head_of_reverse = last_node_before_reverse->next;
+    last_node_before_reverse->next = nullptr;
+    // last_node_before_reverse and head_of_reverse are fixed from now
+    auto node_to_reverse = head_of_reverse;
+    ListNode* tail_of_reverse = nullptr;
+    // node_to_reverse should be set after tail_of_reverse
+    for (int i = 0; i < right - left + 1; i++) {
+      auto next_node_to_reverse = node_to_reverse->next;
+      node_to_reverse->next = tail_of_reverse;
+      tail_of_reverse = node_to_reverse;
+      node_to_reverse = next_node_to_reverse;
+    }
+    last_node_before_reverse->next = tail_of_reverse;
+    head_of_reverse->next = node_to_reverse;
+    return dummy.next;
+  }
+};
+```
+先頭の前にダミーをつけて、先頭の次のノードをダミーの後ろに挿入していく方法
+
+```cpp
+class Solution {
+ public:
+  ListNode* reverseBetween(ListNode* head, int left, int right) {
+    ListNode dummy(0, head);
+    ListNode* last_node_before_reverse = &dummy;
+    for (int i = 0; i < left - 1; i++) {
+      last_node_before_reverse = last_node_before_reverse->next;
+    }
+    // last_node_before_reverse = left-1
+    ListNode* head_of_reverse = last_node_before_reverse->next;
+    //last_node_before_reverse->next = nullptr;
+    // last_node_before_reverse and head_of_reverse are fixed from now
+    ListNode* push_position = head_of_reverse;
+    // node_to_push should be set before push_position
+    for (int i = 0; i < right - left; i++) {
+      auto node_to_push = head_of_reverse->next;
+      auto next_node_to_push = node_to_push->next;
+      last_node_before_reverse->next = node_to_push;
+      node_to_push->next = push_position;
+      push_position = node_to_push; 
+      head_of_reverse->next = node_node_to_push;
+    }
+    return dummy.next;
+  }
+};
+```
