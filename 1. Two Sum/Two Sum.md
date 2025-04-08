@@ -18,7 +18,7 @@
     - mapにserch_targetが存在すれば、対応するvectorの最初のindexが答え
         - num = serch_targetが同じな場合は、vectorのサイズ>=2が必要
 計算量
-- 時間計算量O(log(N)) mapへの挿入にlogかかる
+- 時間計算量 ~~O(log(N))~~ O(NlogN) mapへの挿入にlogかかる
 - 追加の空間計算量O(N)
 
 //共通する仕様は、「もし該当がなければ空のリストを返す」と「複数該当するならindexが一番若いペアを返す」
