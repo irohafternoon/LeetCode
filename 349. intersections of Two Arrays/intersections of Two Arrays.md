@@ -12,7 +12,7 @@ https://leetcode.com/problems/intersections-of-two-arrays/
 計算量
 - 時間計算量O(NlogN)
     - ソートにNlogN+MlogM, N個の要素の判定にNlogMステップ
-    - NlogN+MlogM+NlogM N=M=1000のとき30000ステップほどなので、c++(10^9/秒)として3マイクロ秒
+    - NlogN+MlogM+NlogM N=M=1000のとき30000ステップほどなので、c++(10^9/秒)として30マイクロ秒
 - 空間計算量O(N)
     - 2種類のsetと答えの格納用の配列
 
