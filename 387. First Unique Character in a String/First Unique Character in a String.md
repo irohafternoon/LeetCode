@@ -235,3 +235,4 @@ public:
 #### 2周目の宿題
 - double-linked-listの実装
 - constexprをもっと調べる
+- 文字エンコードについて調べる
