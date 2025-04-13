@@ -161,7 +161,7 @@ teachers' eye
         - boolをintと同じように1byteにすると無駄が多いため、各要素が1bitになるようにしてメモリを節約
         - 通常と同じように参照できないので、参照を指すproxy patternを介するのだそう。
 - num_ , sum_, max_, min_,のような略語は一般的　https://qiita.com/voidhoge/items/383244bad2d728a18dbe
-    - num_　は numbers_ofの略だったのか, numberの略と思っていた
+    - num_　は ~~numbers_of~~ number of の略だったのか, numberの略と思っていた
 - 等号の向きをそろえて一直線上に書く　https://github.com/mura0086/arai60/pull/21/files#r2033346904
 - 自然言語で表したときに自然な変数名に　https://github.com/mura0086/arai60/pull/21/files#r2033278200
 - union-findの設計　https://github.com/ichika0615/arai60/pull/9/files#r1954436002
@@ -224,7 +224,7 @@ private:
     static constexpr char kSea = '0';
     static constexpr int kColumnDiff[4] = {1, -1, 0, 0};
     static constexpr int kRowDiff[4] = {0, 0, 1, -1};
-    // is_validは「まだ探索していない」「島マスである」「indexが範囲内である」ときにtrueを返す
+    // isNewIslandは「まだ探索していない」「島マスである」「indexが範囲内である」ときにtrueを返す
     static bool isNewIsland(int column, int row, int num_column, int num_row,
                             const std::vector<std::vector<int>>& is_visited_island,
                             const std::vector<std::vector<char>>& grid) {
